@@ -74,7 +74,7 @@ const AllUsers = () => {
     }
 
     return (
-        <div className="bg-[#F6F6F6] pt-12">
+        <div className="bg-[#F6F6F6] pt-12 px-20">
             <SectionTitle heading={'MANAGE ALL USERS'} subHeading={'---How many??---'}></SectionTitle>
 
             <div className="bg-white p-12">

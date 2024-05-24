@@ -8,6 +8,7 @@ import dessertImg from "../../../assets/menu/dessert-bg.jpeg";
 import pizzaImg from "../../../assets/menu/pizza-bg.jpg";
 import saladImg from "../../../assets/menu/salad-bg.jpg";
 import soupImg from "../../../assets/menu/soup-bg.jpg";
+import coffeeImg from "../../../assets/menu/Cold-coffe.png";
 
 
 const Menu = () => {
@@ -17,6 +18,7 @@ const Menu = () => {
     const salad = menu.filter(item => item.category === 'salad');
     const pizza = menu.filter(item => item.category === 'pizza');
     const offered = menu.filter(item => item.category === 'offered');
+    const drink = menu.filter(item => item.category === 'drinks');
 
     return (
         <div>
@@ -72,6 +74,17 @@ const Menu = () => {
                     title={"soups"}
                     subTitle={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."}
                     coverImg={soupImg}
+                ></MenuCategory>
+            </div>
+
+
+            {/* drinks section */}
+            {/* soup section */}
+            <div>
+                <MenuCategory items={drink}
+                    title={"drinks"}
+                    subTitle={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."}
+                    coverImg={coffeeImg}
                 ></MenuCategory>
             </div>
         </div>

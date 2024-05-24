@@ -9,8 +9,8 @@ import { BsFillChatSquareTextFill } from "react-icons/bs";
 import { MdHomeFilled } from "react-icons/md";
 import { FaBagShopping } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
-import useCart from "../../Hooks/useCart";
-import useAdmin from "../../Hooks/useAdmin";
+import useCart from "../Hooks/useCart";
+import useAdmin from "../Hooks/useAdmin";
 
 
 const Dashboard = () => {
@@ -40,6 +40,8 @@ const Dashboard = () => {
                                 <li><NavLink to="/dashboard/manageBookings"><span><FaBook /></span>Manage bookings</NavLink></li>
 
                                 <li><NavLink to="/dashboard/allUsers"><span><FaUsers /></span> all users</NavLink></li>
+
+                                <li><NavLink to="/dashboard/cart"><span><FaShoppingCart /></span> My Cart <span className="badge badge-success text-white">({cart.length})</span></NavLink></li>
                             </>
                             :
                             <>
@@ -77,7 +79,7 @@ const Dashboard = () => {
             </div>
 
             {/* dashboard content */}
-            <div className="flex-1 px-20 bg-[#F6F6F6]">
+            <div className="flex-1">
                 <Outlet></Outlet>
             </div>
         </div>

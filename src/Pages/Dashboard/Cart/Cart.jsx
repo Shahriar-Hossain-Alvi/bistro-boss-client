@@ -39,7 +39,7 @@ const Cart = () => {
     }
 
     return (
-        <div className="mt-12">
+        <div className="pt-12 px-20 bg-[#F6F6F6]">
             <SectionTitle heading={'WANNA ADD MORE?'} subHeading={'---My Cart---'}></SectionTitle>
 
 
