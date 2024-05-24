@@ -9,13 +9,14 @@ import { BsFillChatSquareTextFill } from "react-icons/bs";
 import { MdHomeFilled } from "react-icons/md";
 import { FaBagShopping } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
-import useCart from "../Hooks/useCart";
+import useCart from "../../Hooks/useCart";
+import useAdmin from "../../Hooks/useAdmin";
 
 
 const Dashboard = () => {
     const [cart] = useCart();
 
-    const isAdmin = true;
+    const [isAdmin] = useAdmin();
 
     return (
         <div className="flex">
