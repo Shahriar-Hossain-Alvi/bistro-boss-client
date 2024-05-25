@@ -85,7 +85,7 @@ const AddItems = () => {
                             <div className="label">
                                 <span className="label-text">Price*</span>
                             </div>
-                            <input {...register("price", { required: true })} type="number" placeholder="Recipe name" className="input input-bordered w-full" />
+                            <input {...register("price", { required: true })} type="number" step="0.01"  placeholder="Recipe name" className="input input-bordered w-full" />
                         </label>
                     </div>
 

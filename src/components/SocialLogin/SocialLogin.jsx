@@ -12,8 +12,6 @@ const SocialLogin = () => {
     const from = location.state?.from?.pathname || "/";
     const axiosPublic = useAxiosPublic();
 
-    console.log(user);
-
     const handleGoogleSignIn = () => {
         if (user)
             toast.error('Already Logged in');
