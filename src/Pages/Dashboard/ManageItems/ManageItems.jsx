@@ -4,6 +4,7 @@ import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import { FaRegEdit } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import { Link } from "react-router-dom";
 
 
 const ManageItems = () => {
@@ -85,8 +86,10 @@ const ManageItems = () => {
                                     <td>${item.price}</td>
 
                                     <td>
-                                        <button onClick={() => handleUpdateItem(item)} className="btn bg-[#D1A054] text-white"><FaRegEdit className="w-6 h-6" />
-                                        </button>
+                                        <Link to={`/dashboard/updateItem/${item._id}`}>
+                                            <button className="btn bg-[#D1A054] text-white"><FaRegEdit className="w-6 h-6" />
+                                            </button>
+                                        </Link>
                                     </td>
 
                                     <td>
