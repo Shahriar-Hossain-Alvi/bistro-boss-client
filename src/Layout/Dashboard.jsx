@@ -42,6 +42,8 @@ const Dashboard = () => {
                                 <li><NavLink to="/dashboard/allUsers"><span><FaUsers /></span> all users</NavLink></li>
 
                                 <li><NavLink to="/dashboard/cart"><span><FaShoppingCart /></span> My Cart <span className="badge badge-success text-white">({cart.length})</span></NavLink></li>
+
+                                <li><NavLink to="/dashboard/paymentHistory"><span><IoWalletSharp /></span> payment history</NavLink></li>
                             </>
                             :
                             <>

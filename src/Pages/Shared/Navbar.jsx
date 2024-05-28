@@ -3,18 +3,27 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
 import useCart from "../../Hooks/useCart";
 import { GiShoppingCart } from "react-icons/gi";
+import useAdmin from "../../Hooks/useAdmin";
 
 
 const Navbar = () => {
     const { user, logOutUser } = useContext(AuthContext);
     const [cart] = useCart();
+    const [isAdmin] = useAdmin();
 
     const navOptions = <>
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/contact'>CONTACT US</NavLink></li>
-        <li><NavLink to='/dashboard'>DASHBOARD</NavLink></li>
         <li><NavLink to='/menu'>OUR MENU</NavLink></li>
         <li><NavLink to='/shop/salads'>OUR SHOP</NavLink></li>
+        {
+            user && isAdmin &&
+            <li><NavLink to='/dashboard/adminHome'>DASHBOARD</NavLink></li>
+        }
+        {
+            user && !isAdmin &&
+            <li><NavLink to='/dashboard/userHome'>DASHBOARD</NavLink></li>
+        }
         <li>
             <Link to='/dashboard/cart'>
                 <div className="relative">

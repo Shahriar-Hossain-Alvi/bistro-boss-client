@@ -3,6 +3,7 @@ import useCart from "../../../Hooks/useCart";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import { RiDeleteBinLine } from "react-icons/ri";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import { Link } from "react-router-dom";
 
 
 const Cart = () => {
@@ -39,7 +40,7 @@ const Cart = () => {
     }
 
     return (
-        <div className="pt-12 px-20 bg-[#F6F6F6]">
+        <div className="py-12 px-20 bg-[#F6F6F6]">
             <SectionTitle heading={'WANNA ADD MORE?'} subHeading={'---My Cart---'}></SectionTitle>
 
 
@@ -49,7 +50,13 @@ const Cart = () => {
 
                     <h2 className="text-4xl font-semibold">total price: ${totalPrice.toFixed(2)}</h2>
 
-                    <button className="btn bg-[#D1A054] text-xl font-bold text-white uppercase">Pay</button>
+                    {cart.length > 0 ?
+                        <Link to="/dashboard/payment">
+                            <button className="btn bg-[#D1A054] text-xl font-bold text-white uppercase">Pay</button>
+                        </Link>
+                        :
+                        <button disabled className="btn bg-[#D1A054] text-xl font-bold text-white uppercase">Pay</button>
+                    }
                 </div>
 
 
