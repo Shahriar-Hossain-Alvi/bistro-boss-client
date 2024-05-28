@@ -68,7 +68,7 @@ const AdminHome = () => {
             <h2 className="text-4xl italic">Hi, {user?.displayName ? user.displayName : 'Boss'}! Welcome back</h2>
 
             {/* stats cards */}
-            <div className="pt-6 flex justify-between gap-6 flex-wrap">
+            <div className="pt-6 grid grid-cols-2 md:grid-cols-4 gap-6">
 
                 {/* total revenue card */}
                 <div className="flex justify-center items-center bg-gradient-to-r from-[#BB34F5] to-[#FCDBFF] text-white p-4 rounded-xl">
@@ -76,7 +76,7 @@ const AdminHome = () => {
                         <IoWalletSharp className="w-12 h-12" />
                     </div>
                     <div className="stat">
-                        <div className="stat-value">{stats.revenue}</div>
+                        <div className="stat-value">{stats.revenue && (stats.revenue).toFixed(2)}</div>
                         <div className="stat-title text-white">Revenue</div>
                     </div>
                 </div>
@@ -119,9 +119,9 @@ const AdminHome = () => {
 
 
             {/* chats */}
-            <div className="flex justify-between gap-5 mt-6">
+            <div className="grid md:grid-cols-2 gap-5 mt-6">
                 {/* bar chart */}
-                <div className="w-1/2">
+                <div>
                     <BarChart
                         width={500}
                         height={300}
@@ -147,10 +147,10 @@ const AdminHome = () => {
 
 
                 {/* pie chart */}
-                <div className="w-1/2">
+                <div>
                     <ResponsiveContainer width="100%" height="100%">
                         <PieChart width={400} height={400}>
-                        <Legend iconType="diamond" verticalAlign="top"></Legend>
+                        <Legend width="100%" iconType="diamond" verticalAlign="top"></Legend>
                             <Pie
                                 data={pieChartData}
                                 cx="50%"
